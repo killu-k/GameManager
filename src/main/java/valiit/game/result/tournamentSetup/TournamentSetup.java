@@ -1,9 +1,13 @@
 package valiit.game.result.tournamentSetup;
 
+import lombok.Getter;
+import lombok.Setter;
 import valiit.game.result.game.Game;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "tournament_setup")
 public class TournamentSetup {

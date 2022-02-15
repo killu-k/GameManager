@@ -1,11 +1,15 @@
 package valiit.game.result.game;
 
+import lombok.Getter;
+import lombok.Setter;
 import valiit.game.result.gameType.GameType;
 import valiit.game.result.status.Status;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "game")
 public class Game {

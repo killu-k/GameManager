@@ -1,10 +1,14 @@
 package valiit.game.result.tournamentGroup;
 
+import lombok.Getter;
+import lombok.Setter;
 import valiit.game.result.game.Game;
 import valiit.game.result.team.Team;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "tournament_group")
 public class TournamentGroup {

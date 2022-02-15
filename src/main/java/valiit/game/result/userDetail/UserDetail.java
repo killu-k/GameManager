@@ -1,7 +1,12 @@
 package valiit.game.result.userDetail;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "user_detail")
 public class UserDetail {

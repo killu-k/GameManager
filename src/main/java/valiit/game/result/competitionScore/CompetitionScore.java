@@ -1,10 +1,14 @@
 package valiit.game.result.competitionScore;
 
+import lombok.Getter;
+import lombok.Setter;
 import valiit.game.result.team.Team;
 import valiit.game.result.competition.Competition;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "competition_score")
 public class CompetitionScore {

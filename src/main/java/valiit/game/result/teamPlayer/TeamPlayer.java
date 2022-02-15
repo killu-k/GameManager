@@ -1,10 +1,14 @@
 package valiit.game.result.teamPlayer;
 
+import lombok.Getter;
+import lombok.Setter;
 import valiit.game.result.player.Player;
 import valiit.game.result.team.Team;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "team_player")
 public class TeamPlayer {

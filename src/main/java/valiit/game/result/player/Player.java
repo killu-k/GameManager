@@ -1,8 +1,13 @@
 package valiit.game.result.player;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "player")
 public class Player {

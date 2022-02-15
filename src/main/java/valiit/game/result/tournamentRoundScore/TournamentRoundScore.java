@@ -1,9 +1,13 @@
 package valiit.game.result.tournamentRoundScore;
 
+import lombok.Getter;
+import lombok.Setter;
 import valiit.game.result.tournamentGroup.TournamentGroup;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "tournament_round_score")
 public class TournamentRoundScore {

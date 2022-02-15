@@ -1,10 +1,14 @@
 package valiit.game.result.team;
 
+import lombok.Getter;
+import lombok.Setter;
 import valiit.game.result.status.Status;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "team")
 public class Team {
