@@ -36,11 +36,8 @@ public class LoginService {
         User user = userService.getValidUserByUserNameAndPassword(userName, password);
         Integer userId = user.getId();
         List<UserRole> entityUserRoles = userRoleService.getUserRolesByUserId(userId);
-
         List<RoleDto> roleDtos = userRoleMapper.userRolesToRoleDtos(entityUserRoles);
-
         UserDetail userDetail = user.getUserDetail();
-
         LoginResponse response = new LoginResponse();
         response.setUserId(userId);
         response.setFirstName(userDetail.getFirstName());

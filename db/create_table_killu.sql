@@ -1,11 +1,11 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2022-02-15 11:37:49.756
+-- Last modification date: 2022-02-16 14:05:33.321
 
 -- tables
 -- Table: competition
 CREATE TABLE competition (
                              id serial  NOT NULL,
-                             name varchar  NOT NULL,
+                             name varchar(255)  NOT NULL,
                              CONSTRAINT competition_pk PRIMARY KEY (id)
 );
 
@@ -23,7 +23,7 @@ CREATE TABLE game (
                       id serial  NOT NULL,
                       game_type_id int  NOT NULL,
                       status_id int  NOT NULL,
-                      name varchar  NOT NULL,
+                      name varchar(255)  NOT NULL,
                       date date  NOT NULL,
                       CONSTRAINT game_pk PRIMARY KEY (id)
 );
@@ -31,7 +31,7 @@ CREATE TABLE game (
 -- Table: game_in_competition
 CREATE TABLE game_in_competition (
                                      id serial  NOT NULL,
-                                     name varchar  NOT NULL,
+                                     name varchar(255)  NOT NULL,
                                      competition_id int  NOT NULL,
                                      game_id int  NOT NULL,
                                      CONSTRAINT game_in_competition_pk PRIMARY KEY (id)
@@ -40,23 +40,23 @@ CREATE TABLE game_in_competition (
 -- Table: game_type
 CREATE TABLE game_type (
                            id serial  NOT NULL,
-                           name varchar  NOT NULL,
+                           name varchar(255)  NOT NULL,
                            CONSTRAINT game_type_pk PRIMARY KEY (id)
 );
 
 -- Table: player
 CREATE TABLE player (
                         id serial  NOT NULL,
-                        first_name varchar  NOT NULL,
-                        last_name varchar  NOT NULL,
-                        age decimal  NOT NULL,
+                        first_name varchar(255)  NOT NULL,
+                        last_name varchar(255)  NOT NULL,
+                        age decimal(4,1)  NOT NULL,
                         CONSTRAINT player_pk PRIMARY KEY (id)
 );
 
 -- Table: role
 CREATE TABLE role (
                       id serial  NOT NULL,
-                      name varchar  NOT NULL,
+                      name varchar(255)  NOT NULL,
                       CONSTRAINT role_pk PRIMARY KEY (id)
 );
 
@@ -74,15 +74,15 @@ CREATE TABLE score (
 -- Table: status
 CREATE TABLE status (
                         id serial  NOT NULL,
-                        name varchar  NOT NULL,
+                        name varchar(255)  NOT NULL,
                         CONSTRAINT status_pk PRIMARY KEY (id)
 );
 
 -- Table: team
 CREATE TABLE team (
                       id serial  NOT NULL,
-                      name varchar  NOT NULL,
-                      average_age decimal  NOT NULL,
+                      name varchar(255)  NOT NULL,
+                      average_age decimal(4,1)  NOT NULL,
                       status_id int  NOT NULL,
                       CONSTRAINT team_pk PRIMARY KEY (id)
 );
@@ -144,16 +144,16 @@ CREATE TABLE tournament_setup (
 CREATE TABLE "user" (
                         id serial  NOT NULL,
                         user_detail_id int  NOT NULL,
-                        user_name varchar  NOT NULL,
-                        password varchar  NOT NULL,
+                        user_name varchar(255)  NOT NULL,
+                        password varchar(255)  NOT NULL,
                         CONSTRAINT user_pk PRIMARY KEY (id)
 );
 
 -- Table: user_detail
 CREATE TABLE user_detail (
                              id serial  NOT NULL,
-                             first_name varchar  NOT NULL,
-                             last_name varchar  NOT NULL,
+                             first_name varchar(255)  NOT NULL,
+                             last_name varchar(255)  NOT NULL,
                              CONSTRAINT user_detail_pk PRIMARY KEY (id)
 );
 
