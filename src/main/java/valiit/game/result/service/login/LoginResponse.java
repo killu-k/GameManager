@@ -1,14 +1,19 @@
 package valiit.game.result.service.login;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import valiit.game.result.domain.role.RoleDto;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class LoginResponse {
-    private final Integer userId;
-    private final String firstName;
-    private final String lastName;
-    private final List<RoleDto> roles;
+    private Integer userId;
+    private String firstName;
+    private String lastName;
+    private  List<RoleDto> roles;
 }
