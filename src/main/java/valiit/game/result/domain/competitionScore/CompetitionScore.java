@@ -2,8 +2,8 @@ package valiit.game.result.domain.competitionScore;
 
 import lombok.Getter;
 import lombok.Setter;
-import valiit.game.result.domain.team.Team;
 import valiit.game.result.domain.competition.Competition;
+import valiit.game.result.domain.team.Team;
 
 import javax.persistence.*;
 

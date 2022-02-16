@@ -2,8 +2,8 @@ package valiit.game.result.domain.userInGame;
 
 import lombok.Getter;
 import lombok.Setter;
-import valiit.game.result.domain.user.User;
 import valiit.game.result.domain.game.Game;
+import valiit.game.result.domain.user.User;
 
 import javax.persistence.*;
 

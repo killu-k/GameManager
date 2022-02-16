@@ -28,5 +28,4 @@ public class GameInCompetition {
     @JoinColumn(name = "game_id", nullable = false)
     private Game game;
 
-
 }

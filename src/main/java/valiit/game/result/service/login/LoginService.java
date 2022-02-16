@@ -1,7 +1,6 @@
 package valiit.game.result.service.login;
 
 import org.springframework.stereotype.Service;
-import valiit.game.result.domain.role.Role;
 import valiit.game.result.domain.role.RoleDto;
 import valiit.game.result.domain.user.User;
 import valiit.game.result.domain.user.UserService;

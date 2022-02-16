@@ -18,7 +18,4 @@ public class Status {
     @Column(name = "name", nullable = false)
     private String name;
 
-
-
-    //TODO Reverse Engineering! Migrate other columns to the entity
 }

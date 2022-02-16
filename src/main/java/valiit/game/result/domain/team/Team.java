@@ -20,12 +20,11 @@ public class Team {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "average_age", nullable = false, precision = 131089)
+    @Column(name = "average_age", nullable = false, precision = 4, scale = 1)
     private BigDecimal averageAge;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "status_id", nullable = false)
     private Status status;
-
 
 }

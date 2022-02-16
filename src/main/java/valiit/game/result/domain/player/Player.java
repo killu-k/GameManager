@@ -22,8 +22,7 @@ public class Player {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "age", nullable = false, precision = 131089)
+    @Column(name = "age", nullable = false, precision = 4, scale = 1)
     private BigDecimal age;
-
 
 }

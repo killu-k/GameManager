@@ -18,5 +18,4 @@ public class GameType {
     @Column(name = "name", nullable = false)
     private String name;
 
-
 }

@@ -21,5 +21,4 @@ public class UserDetail {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-
 }
