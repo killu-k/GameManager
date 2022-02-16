@@ -12,8 +12,8 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import valiit.game.result.infrastructure.error.ApiError;
 import valiit.game.result.infrastructure.error.GameError;
-import valiit.game.result.infrastructure.exception.GameServiceException;
 import valiit.game.result.infrastructure.exception.DataNotFoundException;
+import valiit.game.result.infrastructure.exception.GameServiceException;
 
 import java.util.ArrayList;
 import java.util.List;
