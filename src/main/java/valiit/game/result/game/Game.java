@@ -33,43 +33,5 @@ public class Game {
     @Column(name = "date", nullable = false)
     private LocalDate date;
 
-    public LocalDate getDate() {
-        return date;
-    }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public GameType getGameType() {
-        return gameType;
-    }
-
-    public void setGameType(GameType gameType) {
-        this.gameType = gameType;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

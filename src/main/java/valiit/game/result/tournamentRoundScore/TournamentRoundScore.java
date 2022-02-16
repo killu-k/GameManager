@@ -26,35 +26,5 @@ public class TournamentRoundScore {
     @JoinColumn(name = "tournament_group_id", nullable = false)
     private TournamentGroup tournamentGroup;
 
-    public TournamentGroup getTournamentGroup() {
-        return tournamentGroup;
-    }
 
-    public void setTournamentGroup(TournamentGroup tournamentGroup) {
-        this.tournamentGroup = tournamentGroup;
-    }
-
-    public Integer getTeamBResult() {
-        return teamBResult;
-    }
-
-    public void setTeamBResult(Integer teamBResult) {
-        this.teamBResult = teamBResult;
-    }
-
-    public Integer getTeamAResult() {
-        return teamAResult;
-    }
-
-    public void setTeamAResult(Integer teamAResult) {
-        this.teamAResult = teamAResult;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

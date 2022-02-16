@@ -28,35 +28,5 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public UserDetail getUserDetail() {
-        return userDetail;
-    }
-
-    public void setUserDetail(UserDetail userDetail) {
-        this.userDetail = userDetail;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

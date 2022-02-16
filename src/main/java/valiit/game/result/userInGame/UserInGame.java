@@ -25,27 +25,5 @@ public class UserInGame {
     @JoinColumn(name = "game_id", nullable = false)
     private Game game;
 
-    public Game getGame() {
-        return game;
-    }
 
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

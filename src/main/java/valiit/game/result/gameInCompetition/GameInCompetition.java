@@ -29,35 +29,5 @@ public class GameInCompetition {
     @JoinColumn(name = "game_id", nullable = false)
     private Game game;
 
-    public Game getGame() {
-        return game;
-    }
 
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public Competition getCompetition() {
-        return competition;
-    }
-
-    public void setCompetition(Competition competition) {
-        this.competition = competition;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

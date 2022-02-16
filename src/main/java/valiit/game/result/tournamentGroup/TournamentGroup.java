@@ -34,51 +34,5 @@ public class TournamentGroup {
     @Column(name = "group_number", nullable = false)
     private Integer groupNumber;
 
-    public Integer getGroupNumber() {
-        return groupNumber;
-    }
 
-    public void setGroupNumber(Integer groupNumber) {
-        this.groupNumber = groupNumber;
-    }
-
-    public Integer getTeamBId() {
-        return teamBId;
-    }
-
-    public void setTeamBId(Integer teamBId) {
-        this.teamBId = teamBId;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
-
-    public Integer getRoundNumber() {
-        return roundNumber;
-    }
-
-    public void setRoundNumber(Integer roundNumber) {
-        this.roundNumber = roundNumber;
-    }
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

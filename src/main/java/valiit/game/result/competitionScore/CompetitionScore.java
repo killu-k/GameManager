@@ -28,35 +28,4 @@ public class CompetitionScore {
     @Column(name = "points", nullable = false)
     private Integer points;
 
-    public Integer getPoints() {
-        return points;
-    }
-
-    public void setPoints(Integer points) {
-        this.points = points;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
-
-    public Competition getCompetition() {
-        return competition;
-    }
-
-    public void setCompetition(Competition competition) {
-        this.competition = competition;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

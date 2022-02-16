@@ -26,35 +26,4 @@ public class TournamentSetup {
     @Column(name = "points_per_round", nullable = false)
     private Integer pointsPerRound;
 
-    public Integer getPointsPerRound() {
-        return pointsPerRound;
-    }
-
-    public void setPointsPerRound(Integer pointsPerRound) {
-        this.pointsPerRound = pointsPerRound;
-    }
-
-    public Integer getNumberOfGroups() {
-        return numberOfGroups;
-    }
-
-    public void setNumberOfGroups(Integer numberOfGroups) {
-        this.numberOfGroups = numberOfGroups;
-    }
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

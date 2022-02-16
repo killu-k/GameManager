@@ -25,27 +25,5 @@ public class TeamPlayer {
     @JoinColumn(name = "player_id", nullable = false)
     private Player player;
 
-    public Player getPlayer() {
-        return player;
-    }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }
