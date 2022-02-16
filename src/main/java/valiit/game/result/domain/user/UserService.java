@@ -7,6 +7,7 @@ import valiit.game.result.domain.validation.ValidationService;
 import valiit.game.result.infrastructure.exception.DataNotFoundException;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -23,6 +24,7 @@ public class UserService {
     @Resource
     private ValidationService validationService;
 
+    @Transactional
     public User getValidUserByUserNameAndPassword(String userName, String password) {
         Optional<User> user = userRepository.findByUserNameAndPassword(userName, password);
         validationService.validateUserExists(user);

@@ -26,7 +26,6 @@ public class Game {
     @JoinColumn(name = "status_id", nullable = false)
     private Status status;
 
-    @Lob
     @Column(name = "name", nullable = false)
     private String name;
 

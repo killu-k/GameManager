@@ -20,11 +20,9 @@ public class User {
     @JoinColumn(name = "user_detail_id", nullable = false)
     private UserDetail userDetail;
 
-    @Lob
     @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Lob
     @Column(name = "password", nullable = false)
     private String password;
 

@@ -15,11 +15,9 @@ public class UserDetail {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Lob
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Lob
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
