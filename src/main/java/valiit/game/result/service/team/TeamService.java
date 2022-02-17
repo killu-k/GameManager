@@ -1,9 +1,7 @@
 package valiit.game.result.service.team;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import valiit.game.result.domain.player.Player;
-import valiit.game.result.domain.player.PlayerDto;
 import valiit.game.result.domain.player.PlayerMapper;
 import valiit.game.result.domain.player.PlayerRepository;
 import valiit.game.result.domain.status.Status;
@@ -31,8 +29,6 @@ public class TeamService {
     private PlayerMapper playerMapper;
     @Resource
     private StatusRepository statusRepository;
-    @Resource
-    private TeamPlayerMapper teamPlayerMapper;
     @Resource
     private TeamPlayerRepository teamPlayerRepository;
 
