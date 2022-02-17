@@ -34,17 +34,39 @@ public class TeamService {
 
 
     public void addTeam(NewTeamRequest request) {
-        Optional<Status> status = statusRepository.findById(1);
+
+        Status status = statusRepository.findByName("registered");
 
         Team team = new Team();
         team.setName(request.getTeamName());
-        team.setAverageAge(BigDecimal.valueOf(0));
 
-        team.setStatus(status.get());
+        team.setStatus(status);
         teamRepository.save(team);
 
         List<Player> players = playerMapper.playerDtosToPlayers(request.getPlayers());
         playerRepository.saveAll(players);
+
+        Integer age = 0;
+        Integer count = 0;
+        List<Player> playerAges = new ArrayList<>();
+
+        for (int i = 0; i < playerAges.toArray().length; i++) {
+
+            count++;
+        }
+
+//        }
+//
+//
+//
+//        List<Player> playerAges = new ArrayList<>();
+//        for (Player playerAge : playerAges) {
+//            Player playersAge = new Player();
+//            playersAge.setAge(players);
+//
+//
+//        }
+//
 
 
         List<TeamPlayer> teamPlayers = new ArrayList<>();
