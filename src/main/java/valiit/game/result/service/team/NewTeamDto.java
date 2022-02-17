@@ -1,14 +1,13 @@
-package valiit.game.result.domain.teamPlayer;
+package valiit.game.result.service.team;
 
 import lombok.Data;
 import valiit.game.result.domain.player.Player;
 import valiit.game.result.domain.team.Team;
 
-import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class TeamPlayerDto implements Serializable {
-    private final Team team;
+public class NewTeamDto {
+    private Team team;
     private List<Player> players;
 }

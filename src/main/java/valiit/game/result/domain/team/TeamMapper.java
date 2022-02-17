@@ -10,4 +10,5 @@ public interface TeamMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateTeamFromTeamDto(TeamDto teamDto, @MappingTarget Team team);
+
 }
