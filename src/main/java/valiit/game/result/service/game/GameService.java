@@ -2,6 +2,7 @@ package valiit.game.result.service.game;
 
 import org.springframework.stereotype.Service;
 import valiit.game.result.domain.game.Game;
+import valiit.game.result.domain.game.GameRepository;
 import valiit.game.result.domain.gameType.GameType;
 import valiit.game.result.domain.gameType.GameTypeRepository;
 import valiit.game.result.domain.status.Status;
@@ -20,6 +21,8 @@ public class GameService {
     private StatusRepository statusRepository;
     @Resource
     private GameTypeRepository gameTypeRepository;
+    @Resource
+    private GameRepository gameRepository;
 
     public void addGame(Integer gameTypeId, String gameName) {
         Game game = new Game();
@@ -28,8 +31,12 @@ public class GameService {
         game.setStatus(status);
         game.setDate(LocalDate.now());
 
-        List<GameType> gameTypes = new ArrayList<>();
-        Optional<GameType> gameTypeById = gameTypeRepository.findById(gameTypeId);
+        GameType gameType = gameTypeRepository.findById(gameTypeId).get();
+        game.setGameType(gameType);
+
+        gameRepository.save(game);
+
+
 
 
     }
