@@ -5,8 +5,7 @@ import valiit.game.result.domain.team.TeamDto;
 
 import java.util.List;
 @Data
-public class NewGameRequest {
-
+public class AddTeamsToGameRequest {
     private Integer gameId;
-    private List<TeamDto> teamIds;
+    private List<Integer> teamIds;
 }

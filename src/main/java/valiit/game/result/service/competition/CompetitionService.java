@@ -18,20 +18,17 @@ public class CompetitionService {
     @Resource
     private CompetitionRepository competitionRepository;
     @Resource
-    private GameMapper gameMapper;
-
-    @Resource
     private GameInCompetitionRepository gameInCompetitionRepository;
-
     @Resource
     private GameRepository gameRepository;
-
 
     public void addCompetition(String competitionName) {
         Competition competition = new Competition();
         competition.setName(competitionName);
         competitionRepository.save(competition);
     }
+// Andmebaasist game_in_competition tabelist kustuta NAME
+
 
     public void addGameToCompetition(AddGamesToCompetitionRequest request) {
         List<GameInCompetition> gamesInCompetitions = new ArrayList<>();

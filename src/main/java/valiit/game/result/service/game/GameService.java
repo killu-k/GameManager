@@ -30,7 +30,7 @@ public class GameService {
     @Resource
     private TeamInGameRepository teamInGameRepository;
     @Resource
-    private TeamMapper teamMapper;
+    private TeamRepository teamRepository;
 
     public void addGame(Integer gameTypeId, String gameName) {
         Game game = new Game();
@@ -43,18 +43,16 @@ public class GameService {
         gameRepository.save(game);
     }
 
-    public void addTeamToGame(NewGameRequest request) {
-        List<Team> teamIds = teamMapper.teamDtosToTeams(request.getTeamIds());
+    public void addTeamToGame(AddTeamsToGameRequest request) {
         List<TeamInGame> teamsInGames = new ArrayList<>();
-        for (Team teamId : teamIds) {
+        for (Integer teamId : request.getTeamIds()) {
             TeamInGame teamInGame = new TeamInGame();
             Game gameById = gameRepository.findById(request.getGameId()).get();
+            Team team = teamRepository.findById(teamId).get();
             teamInGame.setGame(gameById);
-            teamInGame.setTeam(teamId);
+            teamInGame.setTeam(team);
             teamsInGames.add(teamInGame);
         }
         teamInGameRepository.saveAll(teamsInGames);
     }
-
-
 }

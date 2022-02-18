@@ -1,10 +1,8 @@
 package valiit.game.result.service.game;
 
 import org.springframework.web.bind.annotation.*;
-import valiit.game.result.domain.team.TeamDto;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @RestController
 @RequestMapping("/game")
@@ -19,7 +17,7 @@ public class GameController {
     }
 
     @PostMapping("/add/team/in/game")
-    public void addTeamToGame(@RequestBody NewGameRequest request) {
+    public void addTeamToGame(@RequestBody AddTeamsToGameRequest request) {
         gameService.addTeamToGame(request);
     }
 
