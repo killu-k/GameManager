@@ -17,7 +17,6 @@ import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class GameService {
@@ -32,8 +31,6 @@ public class GameService {
     private TeamInGameRepository teamInGameRepository;
     @Resource
     private TeamMapper teamMapper;
-    @Resource
-    private TeamRepository teamRepository;
 
     public void addGame(Integer gameTypeId, String gameName) {
         Game game = new Game();
@@ -44,7 +41,6 @@ public class GameService {
         GameType gameType = gameTypeRepository.findById(gameTypeId).get();
         game.setGameType(gameType);
         gameRepository.save(game);
-
     }
 
     public void addTeamToGame(NewGameRequest request) {
@@ -59,4 +55,6 @@ public class GameService {
         }
         teamInGameRepository.saveAll(teamsInGames);
     }
+
+
 }

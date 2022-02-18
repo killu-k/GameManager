@@ -18,7 +18,7 @@ public class GameController {
         gameService.addGame(gameTypeId, gameName);
     }
 
-    @PostMapping("/add/teams")
+    @PostMapping("/add/team/in/game")
     public void addTeamToGame(@RequestBody NewGameRequest request) {
         gameService.addTeamToGame(request);
     }
