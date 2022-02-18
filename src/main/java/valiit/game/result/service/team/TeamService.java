@@ -9,14 +9,12 @@ import valiit.game.result.domain.status.StatusRepository;
 import valiit.game.result.domain.team.Team;
 import valiit.game.result.domain.team.TeamRepository;
 import valiit.game.result.domain.teamPlayer.TeamPlayer;
-import valiit.game.result.domain.teamPlayer.TeamPlayerMapper;
 import valiit.game.result.domain.teamPlayer.TeamPlayerRepository;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TeamService {
@@ -39,35 +37,11 @@ public class TeamService {
 
         Team team = new Team();
         team.setName(request.getTeamName());
-
         team.setStatus(status);
         teamRepository.save(team);
 
         List<Player> players = playerMapper.playerDtosToPlayers(request.getPlayers());
         playerRepository.saveAll(players);
-
-        Integer age = 0;
-        Integer count = 0;
-        List<Player> playerAges = new ArrayList<>();
-
-        for (int i = 0; i < playerAges.toArray().length; i++) {
-
-            count++;
-        }
-
-//        }
-//
-//
-//
-//        List<Player> playerAges = new ArrayList<>();
-//        for (Player playerAge : playerAges) {
-//            Player playersAge = new Player();
-//            playersAge.setAge(players);
-//
-//
-//        }
-//
-
 
         List<TeamPlayer> teamPlayers = new ArrayList<>();
         for (Player player : players) {
@@ -79,5 +53,28 @@ public class TeamService {
 
         teamPlayerRepository.saveAll(teamPlayers);
 
+
+        BigDecimal ageSum = BigDecimal.valueOf(0);
+        BigDecimal age = BigDecimal.valueOf(0);
+        BigDecimal increment = BigDecimal.valueOf(1);
+        BigDecimal newCount = BigDecimal.valueOf(0);
+
+        List<Player> playerAges = new ArrayList<>();
+        for (Player playerAge : players) {
+            Player playersAge = new Player();
+            age = playerAge.getAge();
+            playersAge.setAge(age);
+            playerAges.add(playerAge);
+            ageSum = ageSum.add(age);
+            newCount = newCount.add(increment);
+
+        }
+
+        BigDecimal averageAge = ageSum.divide(newCount);
+        team.setAverageAge(averageAge);
+        teamRepository.save(team);
+
+
     }
 }
+
