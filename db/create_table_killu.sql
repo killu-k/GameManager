@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2022-02-17 13:54:20.173
+-- Last modification date: 2022-02-18 10:20:08.22
 
 -- tables
 -- Table: competition
@@ -49,7 +49,7 @@ CREATE TABLE player (
                         id serial  NOT NULL,
                         first_name varchar(255)  NOT NULL,
                         last_name varchar(255)  NOT NULL,
-                        age decimal(4,1)  NOT NULL,
+                        age int  NOT NULL,
                         CONSTRAINT player_pk PRIMARY KEY (id)
 );
 
@@ -81,9 +81,9 @@ CREATE TABLE status (
 -- Table: team
 CREATE TABLE team (
                       id serial  NOT NULL,
+                      status_id int  NOT NULL,
                       name varchar(255)  NOT NULL,
                       average_age decimal(4,1)  NULL,
-                      status_id int  NOT NULL,
                       CONSTRAINT team_pk PRIMARY KEY (id)
 );
 

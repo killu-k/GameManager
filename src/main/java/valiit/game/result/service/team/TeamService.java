@@ -32,10 +32,8 @@ public class TeamService {
 
 
     public void addTeam(NewTeamRequest request) {
-
-        Status status = statusRepository.findByName("registered");
-
         Team team = new Team();
+        Status status = statusRepository.findByName("registered");
         team.setName(request.getTeamName());
         team.setStatus(status);
         teamRepository.save(team);
@@ -53,27 +51,16 @@ public class TeamService {
 
         teamPlayerRepository.saveAll(teamPlayers);
 
-
         BigDecimal ageSum = BigDecimal.valueOf(0);
-        BigDecimal age = BigDecimal.valueOf(0);
-        BigDecimal increment = BigDecimal.valueOf(1);
-        BigDecimal newCount = BigDecimal.valueOf(0);
-
-        List<Player> playerAges = new ArrayList<>();
+        Integer count = 0;
         for (Player playerAge : players) {
-            Player playersAge = new Player();
-            age = playerAge.getAge();
-            playersAge.setAge(age);
-            playerAges.add(playerAge);
-            ageSum = ageSum.add(age);
-            newCount = newCount.add(increment);
-
+            ageSum = ageSum.add(BigDecimal.valueOf(playerAge.getAge()));
+            count++;
         }
 
-        BigDecimal averageAge = ageSum.divide(newCount);
+        BigDecimal averageAge = ageSum.divide(BigDecimal.valueOf(count));
         team.setAverageAge(averageAge);
         teamRepository.save(team);
-
 
     }
 }

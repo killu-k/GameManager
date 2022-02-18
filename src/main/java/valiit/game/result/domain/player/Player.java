@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -22,7 +21,7 @@ public class Player {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "age", nullable = false, precision = 4, scale = 1)
-    private BigDecimal age;
+    @Column(name = "age", nullable = false)
+    private Integer age;
 
 }
