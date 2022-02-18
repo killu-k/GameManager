@@ -1,11 +1,10 @@
 package valiit.game.result.service.game;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import valiit.game.result.domain.team.TeamDto;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping("/game")
@@ -14,11 +13,14 @@ public class GameController {
     @Resource
     private GameService gameService;
 
-    @PostMapping("/add")
+    @PostMapping("/add/game")
     public void addGame(@RequestParam Integer gameTypeId, @RequestParam String gameName) {
-
         gameService.addGame(gameTypeId, gameName);
+    }
 
+    @PostMapping("/add/teams")
+    public void addTeamToGame(@RequestBody NewGameRequest request) {
+        gameService.addTeamToGame(request);
     }
 
 }
