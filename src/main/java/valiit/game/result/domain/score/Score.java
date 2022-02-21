@@ -31,8 +31,7 @@ public class Score {
     @Column(name = "referee_score")
     private Integer refereeScore;
 
-    @Column(name = "points", nullable = false)
+    @Column(name = "points")
     private Integer points;
-
 
 }
