@@ -85,10 +85,10 @@ INSERT INTO public.competition_score (id, competition_id, team_id, points) VALUE
 INSERT INTO public.competition_score (id, competition_id, team_id, points) VALUES (DEFAULT, 1, 3, 50);
 INSERT INTO public.competition_score (id, competition_id, team_id, points) VALUES (DEFAULT, 1, 4, 40);
 
-INSERT INTO public.game_in_competition (id, name, competition_id, game_id) VALUES (DEFAULT, 'Köievedu', 1, 1);
-INSERT INTO public.game_in_competition (id, name, competition_id, game_id) VALUES (DEFAULT, 'Teatejooks', 1, 2);
-INSERT INTO public.game_in_competition (id, name, competition_id, game_id) VALUES (DEFAULT, 'Lauluvõistlus', 1, 3);
-INSERT INTO public.game_in_competition (id, name, competition_id, game_id) VALUES (DEFAULT, 'Korvpall', 1, 4);
+INSERT INTO public.game_in_competition (id, competition_id, game_id) VALUES (DEFAULT, 1, 1);
+INSERT INTO public.game_in_competition (id, competition_id, game_id) VALUES (DEFAULT, 1, 2);
+INSERT INTO public.game_in_competition (id, competition_id, game_id) VALUES (DEFAULT, 1, 3);
+INSERT INTO public.game_in_competition (id, competition_id, game_id) VALUES (DEFAULT, 1, 4);
 
 
 INSERT INTO public.tournament_group (id, game_id, round_number, team_a_id, team_b_id, group_number) VALUES (DEFAULT, 1, 1, 1, 2, 1);

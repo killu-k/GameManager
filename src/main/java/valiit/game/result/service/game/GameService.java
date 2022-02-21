@@ -8,7 +8,6 @@ import valiit.game.result.domain.gameType.GameTypeRepository;
 import valiit.game.result.domain.status.Status;
 import valiit.game.result.domain.status.StatusRepository;
 import valiit.game.result.domain.team.Team;
-import valiit.game.result.domain.team.TeamMapper;
 import valiit.game.result.domain.team.TeamRepository;
 import valiit.game.result.domain.teamInGame.TeamInGame;
 import valiit.game.result.domain.teamInGame.TeamInGameRepository;

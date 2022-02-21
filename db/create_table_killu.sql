@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2022-02-18 10:20:08.22
+-- Last modification date: 2022-02-21 07:07:56.046
 
 -- tables
 -- Table: competition
@@ -31,7 +31,6 @@ CREATE TABLE game (
 -- Table: game_in_competition
 CREATE TABLE game_in_competition (
                                      id serial  NOT NULL,
-                                     name varchar(255)  NOT NULL,
                                      competition_id int  NOT NULL,
                                      game_id int  NOT NULL,
                                      CONSTRAINT game_in_competition_pk PRIMARY KEY (id)
