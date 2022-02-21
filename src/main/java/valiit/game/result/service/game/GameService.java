@@ -54,4 +54,8 @@ public class GameService {
         }
         teamInGameRepository.saveAll(teamsInGames);
     }
+
+    public Game findById(Integer gameId) {
+        return gameRepository.findById(gameId).get();
+    }
 }

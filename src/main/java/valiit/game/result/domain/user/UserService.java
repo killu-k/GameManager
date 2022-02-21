@@ -1,25 +1,17 @@
 package valiit.game.result.domain.user;
 
-import lombok.Data;
 import org.springframework.stereotype.Service;
-import valiit.game.result.domain.userRole.UserRoleRepository;
 import valiit.game.result.domain.validation.ValidationService;
-import valiit.game.result.infrastructure.exception.DataNotFoundException;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
-@Data
-
 public class UserService {
 
     @Resource
     private UserRepository userRepository;
-
-    @Resource
-    private UserRoleRepository userRoleRepository;
 
     @Resource
     private ValidationService validationService;
@@ -31,6 +23,9 @@ public class UserService {
         return user.get();
     }
 
+    public User findById(Integer userId) {
+        return userRepository.findById(userId).get();
+    }
 
 
 //    public LoginResponse findUserDetailByUserNamePassword(String userName, String password) {
