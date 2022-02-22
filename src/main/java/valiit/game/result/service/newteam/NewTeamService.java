@@ -53,11 +53,12 @@ public class NewTeamService {
         Player player = playerMapper.toEntity(request.getPlayer());
         playerService.save(player);
 
-        Team team = new Team();
+        Team team = teamService.findTeam(request.getTeamId());
+
         TeamPlayer teamPlayer = new TeamPlayer();
         teamPlayer.setTeam(team);
         teamPlayer.setPlayer(player);
-        teamPlayerService.save(team);
+        teamPlayerService.save(teamPlayer);
     }
 
     public List<NewTeamPlayerDto> findTeamPlayers(Integer teamId) {

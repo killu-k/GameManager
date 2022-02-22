@@ -13,4 +13,8 @@ public class TeamService {
     public void save(Team team) {
         teamRepository.save(team);
     }
+
+    public Team findTeam(Integer teamId) {
+        return teamRepository.findById(teamId).get();
+    }
 }
