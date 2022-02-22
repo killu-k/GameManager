@@ -33,10 +33,10 @@ INSERT INTO public.player (id, first_name, last_name, age) VALUES (DEFAULT, 'Mal
 
 INSERT INTO public.competition (id, name) VALUES (DEFAULT, 'mai2022');
 
-INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 1, 'killuk', 'student123');
-INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 2, 'kartv', 'student123');
-INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 3, 'timok', 'student123');
-INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 4, 'raint', 'student123');
+INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 1, 'killu', '123');
+INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 2, 'kärt', '123');
+INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 3, 'timo', '123');
+INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 4, 'rain', '123');
 
 INSERT INTO public.status (id, name) VALUES (DEFAULT, 'registered');
 INSERT INTO public.status (id, name) VALUES (DEFAULT, 'added');
