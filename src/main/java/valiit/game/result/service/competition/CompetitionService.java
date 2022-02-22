@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import valiit.game.result.domain.competition.Competition;
 import valiit.game.result.domain.competition.CompetitionRepository;
 import valiit.game.result.domain.game.Game;
-import valiit.game.result.domain.game.GameMapper;
 import valiit.game.result.domain.game.GameRepository;
 import valiit.game.result.domain.gameInCompetition.GameInCompetition;
 import valiit.game.result.domain.gameInCompetition.GameInCompetitionRepository;
