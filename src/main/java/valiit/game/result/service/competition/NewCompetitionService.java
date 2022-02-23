@@ -2,6 +2,7 @@ package valiit.game.result.service.competition;
 
 import org.springframework.stereotype.Service;
 import valiit.game.result.domain.competition.Competition;
+import valiit.game.result.domain.competition.CompetitionDto;
 import valiit.game.result.domain.competition.CompetitionRepository;
 import valiit.game.result.domain.game.Game;
 import valiit.game.result.domain.game.GameRepository;
@@ -50,5 +51,9 @@ public class NewCompetitionService {
     public List<NewCompetitionDto> findCompetitionGames(Integer competitionId) {
         List<GameInCompetition> competitionGames = gameInCompetitionService.findAllCompetitionGames(competitionId);
         return gameInCompetitionMapper.toDtos(competitionGames);
+    }
+
+    public List<CompetitionDto> findAllCompetitions() {
+        return null;
     }
 }
