@@ -6,27 +6,32 @@ import valiit.game.result.domain.competition.CompetitionRepository;
 import valiit.game.result.domain.game.Game;
 import valiit.game.result.domain.game.GameRepository;
 import valiit.game.result.domain.gameInCompetition.GameInCompetition;
+import valiit.game.result.domain.gameInCompetition.GameInCompetitionMapper;
 import valiit.game.result.domain.gameInCompetition.GameInCompetitionRepository;
+import valiit.game.result.domain.gameInCompetition.GameInCompetitionService;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CompetitionService {
+public class NewCompetitionService {
     @Resource
     private CompetitionRepository competitionRepository;
     @Resource
     private GameInCompetitionRepository gameInCompetitionRepository;
     @Resource
     private GameRepository gameRepository;
+    @Resource
+    private GameInCompetitionService gameInCompetitionService;
+    @Resource
+    private GameInCompetitionMapper gameInCompetitionMapper;
 
     public void addCompetition(String competitionName) {
         Competition competition = new Competition();
         competition.setName(competitionName);
         competitionRepository.save(competition);
     }
-// Andmebaasist game_in_competition tabelist kustuta NAME
 
 
     public void addGameToCompetition(AddGamesToCompetitionRequest request) {
@@ -40,5 +45,10 @@ public class CompetitionService {
             gamesInCompetitions.add(gameInCompetition);
         }
         gameInCompetitionRepository.saveAll(gamesInCompetitions);
+    }
+
+    public List<NewCompetitionDto> findCompetitionGames(Integer competitionId) {
+        List<GameInCompetition> competitionGames = gameInCompetitionService.findAllCompetitionGames(competitionId);
+        return gameInCompetitionMapper.toDtos(competitionGames);
     }
 }
