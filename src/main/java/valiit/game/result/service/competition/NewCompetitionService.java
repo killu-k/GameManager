@@ -56,6 +56,6 @@ public class NewCompetitionService {
 
     public List<CompetitionDto> findAllCompetitions() {
         List<Competition> competitions = competitionService.findAllCompetitions();
-        return competitionMapper.toDto(competitions) ;
+        return competitionMapper.toDto(competitions);
     }
 }

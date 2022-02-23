@@ -13,7 +13,6 @@ public class CompetitionService {
     private CompetitionRepository competitionRepository;
 
     public List<Competition> findAllCompetitions() {
-        competitionRepository.findAll();
-        return null;
+        return competitionRepository.findAll();
     }
 }
