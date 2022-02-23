@@ -13,6 +13,7 @@ public class NewCompetitionController {
     @Resource
     private NewCompetitionService newCompetitionService;
 
+    @GetMapping("/get/all")
     public List<CompetitionDto> findAllCompetitions() {
         return newCompetitionService.findAllCompetitions();
     }
@@ -21,8 +22,6 @@ public class NewCompetitionController {
     public List<NewCompetitionDto> findCompetitionGames(@RequestParam Integer competitionId) {
         return newCompetitionService.findCompetitionGames(competitionId);
     }
-
-
 
     @PostMapping("/add")
     public void addCompetition(@RequestParam String competitionName) {

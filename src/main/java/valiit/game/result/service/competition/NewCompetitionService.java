@@ -1,9 +1,7 @@
 package valiit.game.result.service.competition;
 
 import org.springframework.stereotype.Service;
-import valiit.game.result.domain.competition.Competition;
-import valiit.game.result.domain.competition.CompetitionDto;
-import valiit.game.result.domain.competition.CompetitionRepository;
+import valiit.game.result.domain.competition.*;
 import valiit.game.result.domain.game.Game;
 import valiit.game.result.domain.game.GameRepository;
 import valiit.game.result.domain.gameInCompetition.GameInCompetition;
@@ -27,13 +25,16 @@ public class NewCompetitionService {
     private GameInCompetitionService gameInCompetitionService;
     @Resource
     private GameInCompetitionMapper gameInCompetitionMapper;
+    @Resource
+    private CompetitionService competitionService;
+    @Resource
+    private CompetitionMapper competitionMapper;
 
     public void addCompetition(String competitionName) {
         Competition competition = new Competition();
         competition.setName(competitionName);
         competitionRepository.save(competition);
     }
-
 
     public void addGameToCompetition(AddGamesToCompetitionRequest request) {
         List<GameInCompetition> gamesInCompetitions = new ArrayList<>();
@@ -54,6 +55,7 @@ public class NewCompetitionService {
     }
 
     public List<CompetitionDto> findAllCompetitions() {
-        return null;
+        List<Competition> competitions = competitionService.findAllCompetitions();
+        return competitionMapper.toDto(competitions) ;
     }
 }
