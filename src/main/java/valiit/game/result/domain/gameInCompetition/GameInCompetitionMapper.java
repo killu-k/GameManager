@@ -11,7 +11,11 @@ public interface GameInCompetitionMapper {
     @Mapping(target = "gameInCompetitionId", source = "id")
     @Mapping(target = "competitionName", source = "competition.name")
     @Mapping(target = "gameName", source = "game.name")
+
+    @Mapping(target = "gameTypeId", source = "game.gameType.id")
+    @Mapping(target = "gameTypeName", source = "game.gameType.name")
     NewCompetitionDto toDto(GameInCompetition gameInCompetition);
+
     List<NewCompetitionDto> toDtos(List<GameInCompetition> gameInCompetition);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

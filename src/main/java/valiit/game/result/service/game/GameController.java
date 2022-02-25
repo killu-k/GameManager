@@ -28,4 +28,6 @@ public class GameController {
     public List<GameTypeDto> getAllGameTypes() {
         return gameService.getAllGameTypes();
     }
+
+
 }
