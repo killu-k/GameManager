@@ -51,13 +51,25 @@ public class ScoreGameService {
         return response;
     }
 
-    public void updateScoreTable(RefereeScoreUpdateRequest request) {
-        for (RefereeScoreDto scoreDetail : request.getScoreDetails()) {
+    public void updateScoreTable(List<RefereeScoreDto> scoreDetails) {
+        List<Score> scores = new ArrayList<>();
+        for (RefereeScoreDto scoreDetail : scoreDetails) {
             Score score = scoreService.findByScoreId(scoreDetail.getScoreId());
             score.setRefereeScore(scoreDetail.getRefereeScore());
             score.setPoints(scoreDetail.getPoints());
             score.setTimeInSeconds(scoreDetail.getTimeInSeconds());
-            scoreService.save(score);
+            scores.add(score);
         }
+        scoreService.saveAll(scores);
+
+    }
+
+    public RefereeScoreResponse findAllTeamsByGameId(Integer gameId) {
+        RefereeScoreResponse response = new RefereeScoreResponse();
+        List<Score> scoreDetails = scoreService.findScoresByGameId(gameId);
+        List<RefereeScoreDto> refereeScoreDtos = scoreMapper.toRefereeScoreDtos(scoreDetails);
+        response.setScoreDetails(refereeScoreDtos);
+        response.setGameTypeId(gameService.findGameTypeId(gameId));
+        return response;
     }
 }

@@ -85,4 +85,9 @@ public class GameService {
     public List<GameTypeDto> getAllGameTypes() {
         return gameTypeService.getAllGameTypes();
     }
+
+    public Integer findGameTypeId(Integer gameId) {
+        Game game = gameRepository.findById(gameId).get();
+        return game.getGameType().getId();
+    }
 }
