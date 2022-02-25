@@ -18,4 +18,9 @@ public class GameInCompetitionService {
     public List<GameInCompetition> findAllCompetitionGames(Integer competitionId) {
         return gameInCompetitionRepository.findCompetitionGamesByCompetitionId(competitionId);
     }
+
+    public GameInCompetition findByCompetitionId(Integer competitionId) {
+        GameInCompetition byCompetitionId = gameInCompetitionRepository.findByCompetitionId(competitionId);
+        return byCompetitionId;
+    }
 }

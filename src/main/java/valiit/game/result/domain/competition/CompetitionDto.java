@@ -6,5 +6,6 @@ import java.io.Serializable;
 
 @Data
 public class CompetitionDto implements Serializable {
-    private final String name;
+    private Integer id;
+    private String name;
 }
