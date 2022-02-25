@@ -8,7 +8,7 @@ import java.util.List;
 public interface CompetitionMapper {
     Competition competitionDtoToCompetition(CompetitionDto competitionDto);
 
-
+    @Mapping(target = "id", source = "id")
     @Mapping(target = "name", source = "name")
     CompetitionDto toDto(Competition competition);
 
