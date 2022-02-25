@@ -5,14 +5,14 @@ INSERT INTO public.user_detail (id, first_name, last_name) VALUES (DEFAULT, 'Kä
 INSERT INTO public.user_detail (id, first_name, last_name) VALUES (DEFAULT, 'Timo', 'Kallaste');
 INSERT INTO public.user_detail (id, first_name, last_name) VALUES (DEFAULT, 'Rain', 'Tüür');
 
-INSERT INTO public.role (id, name) VALUES (DEFAULT, 'admin');
-INSERT INTO public.role (id, name) VALUES (DEFAULT, 'referee');
-INSERT INTO public.role (id, name) VALUES (DEFAULT, 'team_lead');
-INSERT INTO public.role (id, name) VALUES (DEFAULT, 'player');
+INSERT INTO public.role (id, name) VALUES (DEFAULT, 'Admin');
+INSERT INTO public.role (id, name) VALUES (DEFAULT, 'Kohtunik');
+INSERT INTO public.role (id, name) VALUES (DEFAULT, 'Rühmajuht');
+INSERT INTO public.role (id, name) VALUES (DEFAULT, 'Malevlane');
 
-INSERT INTO public.game_type (id, name) VALUES (DEFAULT, 'timed');
-INSERT INTO public.game_type (id, name) VALUES (DEFAULT, 'scored');
-INSERT INTO public.game_type (id, name) VALUES (DEFAULT, 'tournament');
+INSERT INTO public.game_type (id, name) VALUES (DEFAULT, 'Ajavõtt');
+INSERT INTO public.game_type (id, name) VALUES (DEFAULT, 'Punktiarvestus');
+INSERT INTO public.game_type (id, name) VALUES (DEFAULT, 'Turniir');
 
 INSERT INTO public.player (id, first_name, last_name, age) VALUES (DEFAULT, 'Martin', 'Mets', 12);
 INSERT INTO public.player (id, first_name, last_name, age) VALUES (DEFAULT, 'Kalle', 'Karu', 11);
@@ -31,7 +31,7 @@ INSERT INTO public.player (id, first_name, last_name, age) VALUES (DEFAULT, 'Kal
 INSERT INTO public.player (id, first_name, last_name, age) VALUES (DEFAULT, 'Luule', 'Luik', 17);
 INSERT INTO public.player (id, first_name, last_name, age) VALUES (DEFAULT, 'Malle', 'Musi', 18);
 
-INSERT INTO public.competition (id, name) VALUES (DEFAULT, 'mai2022');
+INSERT INTO public.competition (id, name) VALUES (DEFAULT, 'Kokkutulek 2022');
 
 INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 1, 'killu', '123');
 INSERT INTO public."user" (id, user_detail_id, user_name, password) VALUES (DEFAULT, 2, 'kärt', '123');
