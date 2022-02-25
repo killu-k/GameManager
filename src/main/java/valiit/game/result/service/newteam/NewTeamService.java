@@ -64,8 +64,6 @@ public class NewTeamService {
     public List<NewTeamPlayerDto> findTeamPlayers(Integer teamId) {
         List<TeamPlayer> teamPlayers = teamPlayerService.findAllTeamPlayers(teamId);
         return teamPlayerMapper.toDtos(teamPlayers);
-
-
     }
 }
 

@@ -3,6 +3,7 @@ package valiit.game.result.service.score;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping("/score")
@@ -21,9 +22,14 @@ public class ScoreController {
         return scoreGameService.createBlankScoreTable(gameId);
     }
 
-    @PutMapping("/table/update")
-    public void updateScoreTable(@RequestBody RefereeScoreUpdateRequest request) {
-        scoreGameService.updateScoreTable(request);
+    @GetMapping("/all/teams/by/gameid")
+    public RefereeScoreResponse findAllTeamsByGameId(@RequestParam Integer gameId) {
+        return scoreGameService.findAllTeamsByGameId(gameId);
+    }
+
+    @PutMapping("/scores")
+    public void updateScoreTable(@RequestBody List<RefereeScoreDto> scoreDetails) {
+        scoreGameService.updateScoreTable(scoreDetails);
     }
 
 }
