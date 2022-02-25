@@ -9,6 +9,9 @@ public interface GameInCompetitionRepository extends JpaRepository<GameInCompeti
     @Query("select g from GameInCompetition g where g.competition.id = ?1 order by g.game.name")
     List<GameInCompetition> findCompetitionGamesByCompetitionId(Integer id);
 
+
+
+
     @Query("select g from GameInCompetition g where g.competition.id = ?1")
     GameInCompetition findByCompetitionId(Integer competitionId);
 
