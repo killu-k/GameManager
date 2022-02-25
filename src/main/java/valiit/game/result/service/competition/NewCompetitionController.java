@@ -24,8 +24,8 @@ public class NewCompetitionController {
     }
 
     @PostMapping("/add")
-    public void addCompetition(@RequestParam String competitionName) {
-        newCompetitionService.addCompetition(competitionName);
+    public CompetitionDto addCompetition(@RequestParam String competitionName) {
+      return newCompetitionService.addCompetition(competitionName);
     }
 
     @PostMapping("/add/game/in/competition")

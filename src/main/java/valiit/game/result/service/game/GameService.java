@@ -1,12 +1,19 @@
 package valiit.game.result.service.game;
 
 import org.springframework.stereotype.Service;
+import valiit.game.result.domain.competition.Competition;
+import valiit.game.result.domain.competition.CompetitionRepository;
 import valiit.game.result.domain.game.Game;
 import valiit.game.result.domain.game.GameRepository;
+import valiit.game.result.domain.gameInCompetition.GameInCompetition;
+import valiit.game.result.domain.gameInCompetition.GameInCompetitionService;
 import valiit.game.result.domain.gameType.GameType;
+import valiit.game.result.domain.gameType.GameTypeDto;
 import valiit.game.result.domain.gameType.GameTypeRepository;
+import valiit.game.result.domain.gameType.GameTypeService;
 import valiit.game.result.domain.status.Status;
 import valiit.game.result.domain.status.StatusRepository;
+import valiit.game.result.domain.status.StatusService;
 import valiit.game.result.domain.team.Team;
 import valiit.game.result.domain.team.TeamRepository;
 import valiit.game.result.domain.teamInGame.TeamInGame;
@@ -17,9 +24,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static valiit.game.result.service.StatusValues.REGISTERED;
+
 @Service
 public class GameService {
-
+    @Resource
+    private StatusService statusService;
     @Resource
     private StatusRepository statusRepository;
     @Resource
@@ -30,16 +40,29 @@ public class GameService {
     private TeamInGameRepository teamInGameRepository;
     @Resource
     private TeamRepository teamRepository;
+    @Resource
+   private GameTypeService gameTypeService;
+    @Resource
+    private GameInCompetitionService gameInCompetitionService;
 
-    public void addGame(Integer gameTypeId, String gameName) {
+    @Resource
+    private CompetitionRepository competitionRepository;
+
+    public void addGame(AddNewGameRequest request) {
+
         Game game = new Game();
-        game.setName(gameName);
-        Status status = statusRepository.findByName("registered");
+        game.setName(request.getGameName());
+        Status status = statusRepository.findByName(REGISTERED);
         game.setStatus(status);
         game.setDate(LocalDate.now());
-        GameType gameType = gameTypeRepository.findById(gameTypeId).get();
+        GameType gameType = gameTypeRepository.findById(request.getGameTypeId()).get();
         game.setGameType(gameType);
         gameRepository.save(game);
+        Competition competition = competitionRepository.findById(request.getCompetitionId()).get();
+        GameInCompetition gameInCompetition = new GameInCompetition();
+        gameInCompetition.setCompetition(competition);
+        gameInCompetition.setGame(game);
+        gameInCompetitionService.save(gameInCompetition);
     }
 
     public void addTeamToGame(AddTeamsToGameRequest request) {
@@ -57,5 +80,9 @@ public class GameService {
 
     public Game findById(Integer gameId) {
         return gameRepository.findById(gameId).get();
+    }
+
+    public List<GameTypeDto> getAllGameTypes() {
+        return gameTypeService.getAllGameTypes();
     }
 }

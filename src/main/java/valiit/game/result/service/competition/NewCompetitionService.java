@@ -30,10 +30,14 @@ public class NewCompetitionService {
     @Resource
     private CompetitionMapper competitionMapper;
 
-    public void addCompetition(String competitionName) {
+    public CompetitionDto addCompetition(String competitionName) {
         Competition competition = new Competition();
         competition.setName(competitionName);
         competitionRepository.save(competition);
+        CompetitionDto competitionDto = new CompetitionDto();
+        competitionDto.setName(competitionName);
+        competitionDto.setId(competition.getId());
+        return competitionDto;
     }
 
     public void addGameToCompetition(AddGamesToCompetitionRequest request) {
