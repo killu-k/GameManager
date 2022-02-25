@@ -34,9 +34,9 @@ public class NewCompetitionService {
         Competition competition = new Competition();
         competition.setName(competitionName);
         competitionRepository.save(competition);
-        CompetitionDto competitionDto = new CompetitionDto(competition.getId(), competitionName);
-//        competitionDto.setName(competitionName);
-//        competitionDto.setId(competition.getId());
+        CompetitionDto competitionDto = new CompetitionDto();
+        competitionDto.setName(competitionName);
+        competitionDto.setId(competition.getId());
         return competitionDto;
     }
 
