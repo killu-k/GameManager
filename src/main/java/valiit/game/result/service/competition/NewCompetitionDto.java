@@ -7,4 +7,7 @@ public class NewCompetitionDto {
     private final Integer gameInCompetitionId;
     private final String competitionName;
     private final String gameName;
+
+    private final Integer gameTypeId;
+    private final String gameTypeName;
 }
