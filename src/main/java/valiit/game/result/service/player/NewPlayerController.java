@@ -17,8 +17,8 @@ public class NewPlayerController {
         newPlayerService.updatePlayerInfo(playerDto, teamPlayerId);
     }
 
-    @DeleteMapping("/delete")
-    public void deletePlayer(@RequestParam Integer teamPlayerId) {
-        newPlayerService.deletePlayer(teamPlayerId);
-    }
+//    @DeleteMapping("/delete")
+//    public void deletePlayer(@RequestParam Integer teamPlayerId) {
+//        newPlayerService.deletePlayer(teamPlayerId);
+//    }
 }
