@@ -21,13 +21,8 @@ public class TeamPlayerService {
         return teamPlayerRepository.findTeamPlayersByTeamIdOrderById(teamId);
     }
 
-
     public TeamPlayer findById(Integer teamPlayerId) {
         TeamPlayer teamPlayer = teamPlayerRepository.findById(teamPlayerId).get();
         return teamPlayer;
-    }
-
-    public void delete(TeamPlayer teamPlayer) {
-        teamPlayerRepository.delete(teamPlayer);
     }
 }

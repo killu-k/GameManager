@@ -15,4 +15,10 @@ public class CompetitionService {
     public List<Competition> findAllCompetitions() {
         return competitionRepository.findAll();
     }
+
+    public Competition findById(Integer CompetitionId) {
+        Competition competition = competitionRepository.findById(CompetitionId).get();
+        return competition;
+    }
 }
+

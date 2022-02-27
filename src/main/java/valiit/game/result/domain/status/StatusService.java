@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
+import static valiit.game.result.service.StatusValues.REGISTERED;
+
 @Service
 public class StatusService {
 

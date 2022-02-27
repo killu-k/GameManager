@@ -13,7 +13,5 @@ public class PlayerService {
 
     public void save(Player player) {playerRepository.save(player);}
 
-    public void delete(Player player) {
-        playerRepository.delete(player);
-    }
+    public void delete(Player player) {playerRepository.delete(player);}
 }
