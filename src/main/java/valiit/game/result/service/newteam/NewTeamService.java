@@ -55,9 +55,7 @@ public class NewTeamService {
     public void addNewPlayerToTeam(NewTeamPlayerRequest request) {
         Player player = playerMapper.toEntity(request.getPlayer());
         playerService.save(player);
-
         Team team = teamService.findTeam(request.getTeamId());
-
         TeamPlayer teamPlayer = new TeamPlayer();
         teamPlayer.setTeam(team);
         teamPlayer.setPlayer(player);
