@@ -2,6 +2,7 @@ package valiit.game.result.service.newteam;
 
 import org.springframework.stereotype.Service;
 import valiit.game.result.domain.player.Player;
+import valiit.game.result.domain.player.PlayerDto;
 import valiit.game.result.domain.player.PlayerMapper;
 import valiit.game.result.domain.player.PlayerService;
 import valiit.game.result.domain.status.Status;
@@ -13,6 +14,8 @@ import valiit.game.result.domain.teamPlayer.TeamPlayerMapper;
 import valiit.game.result.domain.teamPlayer.TeamPlayerService;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import static valiit.game.result.service.StatusValues.REGISTERED;
@@ -59,6 +62,22 @@ public class NewTeamService {
         teamPlayer.setTeam(team);
         teamPlayer.setPlayer(player);
         teamPlayerService.save(teamPlayer);
+
+        ArrayList<Player> players = new ArrayList<>();
+        List<TeamPlayer> allTeamPlayers = teamPlayerService.findAllTeamPlayers(team.getId());
+        for (TeamPlayer teamPlayer1 : allTeamPlayers) {
+            Player player1 = teamPlayer1.getPlayer();
+            players.add(player1);
+        }
+        Integer ageSum = 0;
+        Integer count = 0;
+        for (Player player1 : players) {
+            Integer age = player1.getAge();
+            ageSum += age;
+            count++;
+        } BigDecimal averageAge = BigDecimal.valueOf(ageSum / count);
+        team.setAverageAge(averageAge);
+        teamService.save(team);
     }
 
     public List<NewTeamPlayerDto> findTeamPlayers(Integer teamId) {
