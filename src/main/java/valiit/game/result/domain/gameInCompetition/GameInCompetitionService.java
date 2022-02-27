@@ -1,7 +1,6 @@
 package valiit.game.result.domain.gameInCompetition;
 
 import org.springframework.stereotype.Service;
-import valiit.game.result.domain.game.Game;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -28,5 +27,4 @@ public class GameInCompetitionService {
     public void deleteGameInCompetition(Integer gameInCompetitionId) {
         gameInCompetitionRepository.deleteGameByGameInCompetitionId(gameInCompetitionId);
     }
-
 }

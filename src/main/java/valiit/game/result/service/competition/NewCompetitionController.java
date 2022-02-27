@@ -2,6 +2,8 @@ package valiit.game.result.service.competition;
 
 import org.springframework.web.bind.annotation.*;
 import valiit.game.result.domain.competition.CompetitionDto;
+import valiit.game.result.domain.gameInCompetition.GameInCompetitionDto;
+import valiit.game.result.domain.gameInCompetition.GameInCompetitionMapper;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -36,4 +38,5 @@ public class NewCompetitionController {
     public void deleteGameInCompetition(@RequestParam Integer gameInCompetitionId) {
         newCompetitionService.deleteGameInCompetition(gameInCompetitionId);
     }
+
 }

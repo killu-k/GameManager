@@ -20,4 +20,5 @@ public interface GameInCompetitionMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateGameInCompetitionFromGameInCompetitionDto(GameInCompetitionDto gameInCompetitionDto, @MappingTarget GameInCompetition gameInCompetition);
+
 }

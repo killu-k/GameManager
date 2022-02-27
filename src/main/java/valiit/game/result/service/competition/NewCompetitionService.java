@@ -4,10 +4,7 @@ import org.springframework.stereotype.Service;
 import valiit.game.result.domain.competition.*;
 import valiit.game.result.domain.game.Game;
 import valiit.game.result.domain.game.GameRepository;
-import valiit.game.result.domain.gameInCompetition.GameInCompetition;
-import valiit.game.result.domain.gameInCompetition.GameInCompetitionMapper;
-import valiit.game.result.domain.gameInCompetition.GameInCompetitionRepository;
-import valiit.game.result.domain.gameInCompetition.GameInCompetitionService;
+import valiit.game.result.domain.gameInCompetition.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -66,4 +63,6 @@ public class NewCompetitionService {
     public void deleteGameInCompetition(Integer gameInCompetitionId) {
         gameInCompetitionService.deleteGameInCompetition(gameInCompetitionId);
     }
+
+
 }
