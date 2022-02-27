@@ -13,7 +13,6 @@ import valiit.game.result.domain.gameType.GameTypeRepository;
 import valiit.game.result.domain.gameType.GameTypeService;
 import valiit.game.result.domain.status.Status;
 import valiit.game.result.domain.status.StatusRepository;
-import valiit.game.result.domain.status.StatusService;
 import valiit.game.result.domain.team.Team;
 import valiit.game.result.domain.team.TeamRepository;
 import valiit.game.result.domain.teamInGame.TeamInGame;
@@ -28,8 +27,7 @@ import static valiit.game.result.service.StatusValues.REGISTERED;
 
 @Service
 public class GameService {
-    @Resource
-    private StatusService statusService;
+    
     @Resource
     private StatusRepository statusRepository;
     @Resource
@@ -41,10 +39,9 @@ public class GameService {
     @Resource
     private TeamRepository teamRepository;
     @Resource
-   private GameTypeService gameTypeService;
+    private GameTypeService gameTypeService;
     @Resource
     private GameInCompetitionService gameInCompetitionService;
-
     @Resource
     private CompetitionRepository competitionRepository;
 
