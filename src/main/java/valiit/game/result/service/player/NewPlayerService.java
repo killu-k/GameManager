@@ -31,10 +31,9 @@ public class NewPlayerService {
         playerService.save(player);
     }
 
-//    public void deletePlayer(Integer teamPlayerId) {
-//        TeamPlayer teamPlayer = teamPlayerService.findById(teamPlayerId);
-//        Player player = teamPlayer.getPlayer();
-//        playerService.delete(player);
-//        teamPlayerService.delete(teamPlayer);
-//    }
+    public void deletePlayer(Integer teamPlayerId) {
+        TeamPlayer teamPlayer = teamPlayerService.findById(teamPlayerId);
+        Player player = teamPlayer.getPlayer();
+        playerService.delete(player);
+    }
 }
