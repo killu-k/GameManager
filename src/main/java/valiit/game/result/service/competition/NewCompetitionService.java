@@ -62,4 +62,8 @@ public class NewCompetitionService {
         List<Competition> competitions = competitionService.findAllCompetitions();
         return competitionMapper.toDto(competitions);
     }
+
+    public void deleteGameInCompetition(Integer gameInCompetitionId) {
+        gameInCompetitionService.deleteGameInCompetition(gameInCompetitionId);
+    }
 }

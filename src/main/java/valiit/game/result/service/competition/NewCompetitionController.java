@@ -2,7 +2,6 @@ package valiit.game.result.service.competition;
 
 import org.springframework.web.bind.annotation.*;
 import valiit.game.result.domain.competition.CompetitionDto;
-import valiit.game.result.domain.gameInCompetition.GameInCompetitionMapper;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -25,11 +24,16 @@ public class NewCompetitionController {
 
     @PostMapping("/add")
     public CompetitionDto addCompetition(@RequestParam String competitionName) {
-      return newCompetitionService.addCompetition(competitionName);
+        return newCompetitionService.addCompetition(competitionName);
     }
 
     @PostMapping("/add/game/in/competition")
     public void addGameToCompetition(@RequestBody AddGamesToCompetitionRequest request) {
         newCompetitionService.addGameToCompetition(request);
+    }
+
+    @DeleteMapping("/delete/game")
+    public void deleteGameInCompetition(@RequestParam Integer gameInCompetitionId) {
+        newCompetitionService.deleteGameInCompetition(gameInCompetitionId);
     }
 }
