@@ -279,6 +279,7 @@ ALTER TABLE team_player
     ADD CONSTRAINT team_player_player
         FOREIGN KEY (player_id)
             REFERENCES player (id)
+            ON DELETE CASCADE
             NOT DEFERRABLE
                 INITIALLY IMMEDIATE
 ;

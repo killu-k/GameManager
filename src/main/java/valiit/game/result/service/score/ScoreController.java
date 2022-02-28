@@ -11,12 +11,6 @@ public class ScoreController {
     @Resource
     private ScoreGameService scoreGameService;
 
-//    ref scorile tühi tabel
-//    update  - ehk lisame punktid tühja tabelisse
-//    repos paneme, et mis järjekorras ta meile tabeli info annab
-
-//    ja siis on kõik uuesti aga timed score-ga
-
     @GetMapping("/all/teams/by/gameid")
     public RefereeScoreResponse findAllTeamsByGameId(@RequestParam Integer gameId) {
         return scoreGameService.findAllTeamsByGameId(gameId);
