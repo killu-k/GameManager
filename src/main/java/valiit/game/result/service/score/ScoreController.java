@@ -17,14 +17,19 @@ public class ScoreController {
 
 //    ja siis on kõik uuesti aga timed score-ga
 
-    @PostMapping("/blank/table")
-    public RefereeScoreResponse createBlankScoreTable(@RequestParam Integer gameId) {
-        return scoreGameService.createBlankScoreTable(gameId);
-    }
-
     @GetMapping("/all/teams/by/gameid")
     public RefereeScoreResponse findAllTeamsByGameId(@RequestParam Integer gameId) {
         return scoreGameService.findAllTeamsByGameId(gameId);
+    }
+
+    @GetMapping("/all/times/by/gameid")
+    public List<TimeScoreDto> findAllTeamTimesByGameId (@RequestParam Integer gameId) {
+        return scoreGameService.findAllTeamTimesByGameId(gameId);
+    }
+
+    @PostMapping("/blank/table")
+    public RefereeScoreResponse createBlankScoreTable(@RequestParam Integer gameId) {
+        return scoreGameService.createBlankScoreTable(gameId);
     }
 
     @PutMapping("/scores")

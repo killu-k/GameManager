@@ -72,4 +72,21 @@ public class ScoreGameService {
         response.setGameTypeId(gameService.findGameTypeId(gameId));
         return response;
     }
+
+    public List<TimeScoreDto> findAllTeamTimesByGameId(Integer gameId) {
+        List<Score> scoresByGameId = scoreService.findScoresByGameId(gameId);
+
+        List<TimeScoreDto> timeScoreDtos = new ArrayList<>();
+        for (Score score : scoresByGameId) {
+            TimeScoreDto timeScoreDto = new TimeScoreDto();
+            Long timeInSeconds = score.getTimeInSeconds();
+            timeScoreDto.setTimeInSeconds(timeInSeconds);
+            String teamName = score.getTeam().getName();
+            timeScoreDto.setTeamName(teamName);
+            timeScoreDto.setScoreId(score.getId());
+            timeScoreDtos.add(timeScoreDto);
+        }
+
+        return timeScoreDtos;
+    }
 }
