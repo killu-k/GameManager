@@ -27,6 +27,11 @@ public class ScoreController {
         return scoreGameService.findAllTeamTimesByGameId(gameId);
     }
 
+    @GetMapping ("/all/referee/scores/by/gameid")
+    public List<RefereeScoreDto> findAllTeamRefereeScoresByGameId (@RequestParam Integer gameId) {
+        return scoreGameService.findAllTeamRefereeScoresByGameId(gameId);
+    }
+
     @PostMapping("/blank/table")
     public RefereeScoreResponse createBlankScoreTable(@RequestParam Integer gameId) {
         return scoreGameService.createBlankScoreTable(gameId);

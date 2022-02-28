@@ -27,4 +27,8 @@ public class ScoreService {
         return scoreRepository.findScoresByGameId(gameId);
     }
 
+    public List<Score> findRefereeScoresByGameId(Integer gameId) {
+        return scoreRepository.findRefereeScoresByGameId(gameId);
+    }
+
 }

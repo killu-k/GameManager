@@ -11,6 +11,7 @@ import valiit.game.result.service.game.GameService;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -75,18 +76,27 @@ public class ScoreGameService {
 
     public List<TimeScoreDto> findAllTeamTimesByGameId(Integer gameId) {
         List<Score> scoresByGameId = scoreService.findScoresByGameId(gameId);
-
         List<TimeScoreDto> timeScoreDtos = new ArrayList<>();
         for (Score score : scoresByGameId) {
             TimeScoreDto timeScoreDto = new TimeScoreDto();
-            Long timeInSeconds = score.getTimeInSeconds();
-            timeScoreDto.setTimeInSeconds(timeInSeconds);
-            String teamName = score.getTeam().getName();
-            timeScoreDto.setTeamName(teamName);
+            timeScoreDto.setTimeInSeconds(score.getTimeInSeconds());
+            timeScoreDto.setTeamName(score.getTeam().getName());
             timeScoreDto.setScoreId(score.getId());
             timeScoreDtos.add(timeScoreDto);
         }
-
         return timeScoreDtos;
+    }
+
+    public List<RefereeScoreDto> findAllTeamRefereeScoresByGameId(Integer gameId) {
+        List<Score> scoresByGameId = scoreService.findRefereeScoresByGameId(gameId);
+        List<RefereeScoreDto> refereeScoreDtos = new ArrayList<>();
+        for (Score score : scoresByGameId) {
+            RefereeScoreDto refereeScoreDto = new RefereeScoreDto();
+            refereeScoreDto.setRefereeScore(score.getRefereeScore());
+            refereeScoreDto.setTeamName(score.getTeam().getName());
+            refereeScoreDto.setScoreId(score.getId());
+            refereeScoreDtos.add(refereeScoreDto);
+        }
+        return refereeScoreDtos;
     }
 }
